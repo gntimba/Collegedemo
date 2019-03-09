@@ -1,13 +1,17 @@
 package com.demo.college_demo;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.ActionBar;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.Window;
 import android.widget.GridLayout;
 import android.widget.Toast;
 
-public class MainActivity extends Activity {
+
+public class MainActivity extends AppCompatActivity {
 
     GridLayout mainGrid;
 
@@ -15,16 +19,14 @@ public class MainActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.hide();
 
         mainGrid =findViewById(R.id.grid);
-        //set event
-    //setSingleEvent(mainGrid);
-    }
-
-    private void setSingleEvent(GridLayout mainGrid) {
-        //loop all items of main grid
 
     }
+
+
     public void timeTable (View view)
     {
         Toast.makeText(this, "timeTable", Toast.LENGTH_SHORT).show();
@@ -47,6 +49,8 @@ public class MainActivity extends Activity {
     }
     public void finance (View view)
     {
+        Intent i = new Intent(this, finance.class);
+        startActivity(i);
         Toast.makeText(this, "finance", Toast.LENGTH_SHORT).show();
     }
     public void academic (View view)

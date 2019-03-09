@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/lucas2"
+    android:weightSum="10"
+    android:orientation="vertical"
+    tools:context=".finance">
+
+    <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="3"
+        android:layout_marginBottom="15dp"
+        android:background="#696666FF"
+        android:paddingTop="40dp">
+
+        <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="1"
+                android:text="Balance:"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/balance"
+                android:layout_width="wrap_content"
+android:text="R34 000"
+                android:paddingLeft="80dp"
+                android:textSize="20sp"
+                android:textColor="@color/white"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="15dp"
+                android:layout_column="2" />
+
+        </TableRow>
+        <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="1"
+                android:text="Owed"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/owed"
+                android:layout_width="wrap_content"
+                android:text="R -34 000"
+                android:paddingLeft="80dp"
+                android:textSize="20sp"
+                android:textColor="@color/red"
+                android:layout_height="wrap_content"
+                android:layout_column="2" />
+
+        </TableRow>
+    </TableLayout>
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_columnWeight="1"
+        android:layout_rowWeight="1"
+        android:layout_weight="6"
+        app:cardBackgroundColor="#FFFFFF"
+        android:layout_marginBottom="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        app:cardMaxElevation="8dp"
+        app:cardCornerRadius="8dp"
+
+        >
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="12dp"
+            android:text="Recent Transactions"/>
+        <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingTop="40dp">
+
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_marginBottom="15dp"
+                android:layout_height="fill_parent">
+
+                <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="1"
+                    android:layout_marginLeft="12dp"
+                android:text="Ref."
+
+                android:textSize="20sp"
+
+                android:textStyle="bold" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_column="2"
+                    android:paddingLeft="8dp"
+                    android:text="Date"
+
+                    android:textSize="20sp"
+                    />
+
+                <TextView
+
+                    android:layout_width="wrap_content"
+                    android:text="Amount"
+                    android:paddingLeft="8dp"
+                    android:textSize="20sp"
+
+                    android:layout_height="wrap_content"
+
+                    android:layout_column="3" />
+
+            </TableRow>
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent">
+
+                <TextView
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_column="1"
+                    android:layout_marginLeft="12dp"
+                    android:text="Cash focus"
+
+
+
+                   />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_column="2"
+                    android:paddingLeft="8dp"
+                    android:text="1999-02-03"
+
+                    />
+
+                <TextView
+
+                    android:layout_width="wrap_content"
+                    android:text="+ R200"
+                    android:paddingLeft="8dp"
+                    android:textSize="20sp"
+                    android:textColor="@color/green"
+                    android:layout_height="wrap_content"
+
+                    android:layout_column="3" />
+
+            </TableRow>
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent">
+
+                <TextView
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_column="1"
+                    android:layout_marginLeft="12dp"
+                    android:text="Cash focus"
+
+
+
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_column="2"
+                    android:paddingLeft="8dp"
+                    android:text="1999-02-03"
+
+                    />
+
+                <TextView
+
+                    android:layout_width="wrap_content"
+                    android:text="+ R200"
+                    android:paddingLeft="8dp"
+                    android:textSize="20sp"
+                    android:textColor="@color/green"
+                    android:layout_height="wrap_content"
+
+                    android:layout_column="3" />
+
+            </TableRow>
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent">
+
+                <TextView
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="12dp"
+                    android:layout_column="1"
+                    android:text="222544"
+
+
+
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_column="2"
+                    android:paddingLeft="8dp"
+                    android:text="1999-02-03"
+
+                    />
+
+                <TextView
+
+                    android:layout_width="wrap_content"
+                    android:text="- R200"
+                    android:paddingLeft="8dp"
+                    android:textSize="20sp"
+                    android:textColor="@color/red"
+                    android:layout_height="wrap_content"
+
+                    android:layout_column="3" />
+
+            </TableRow>
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent">
+
+                <TextView
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_column="1"
+                    android:layout_marginLeft="12dp"
+                    android:text="Cash focus"
+
+
+
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_column="2"
+                    android:paddingLeft="8dp"
+                    android:text="1999-02-03"
+
+                    />
+
+                <TextView
+
+                    android:layout_width="wrap_content"
+                    android:text="+ R200"
+                    android:paddingLeft="8dp"
+                    android:textSize="20sp"
+                    android:textColor="@color/green"
+                    android:layout_height="wrap_content"
+
+                    android:layout_column="3" />
+
+            </TableRow>
+        </TableLayout>
+
+    </android.support.v7.widget.CardView>
+
+
+
+</LinearLayout>
