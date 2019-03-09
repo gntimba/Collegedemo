@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/lucas"
+    android:background="@drawable/lucas2"
     android:weightSum="10"
     android:orientation="vertical"
 
@@ -48,6 +48,7 @@
             android:foreground="?android:attr/selectableItemBackground"
             android:clickable="true"
             android:focusable="true"
+            app:cardBackgroundColor="#80FFFFFF"
             android:layout_height="0dp"
             android:layout_columnWeight="1"
             android:layout_rowWeight="1"
@@ -56,6 +57,7 @@
             android:layout_marginRight="16dp"
             app:cardMaxElevation="8dp"
             app:cardCornerRadius="8dp"
+            android:onClick="timeTable"
             >
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -82,6 +84,7 @@
             android:foreground="?android:attr/selectableItemBackground"
             android:clickable="true"
             android:focusable="true"
+            app:cardBackgroundColor="#80FFFFFF"
             android:layout_height="0dp"
             android:layout_columnWeight="1"
             android:layout_rowWeight="1"
@@ -90,6 +93,7 @@
             android:layout_marginRight="16dp"
             app:cardMaxElevation="8dp"
             app:cardCornerRadius="8dp"
+            android:onClick="attendance"
             >
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -124,6 +128,7 @@
             android:clickable="true"
             android:focusable="true"
             android:layout_height="0dp"
+            app:cardBackgroundColor="#80FFFFFF"
             android:layout_columnWeight="1"
             android:layout_rowWeight="1"
             android:layout_marginBottom="16dp"
@@ -131,6 +136,7 @@
             android:layout_marginRight="16dp"
             app:cardMaxElevation="8dp"
             app:cardCornerRadius="8dp"
+            android:onClick="query"
             >
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -162,6 +168,7 @@
             android:foreground="?android:attr/selectableItemBackground"
             android:clickable="true"
             android:focusable="true"
+            app:cardBackgroundColor="#80FFFFFF"
             android:layout_height="0dp"
             android:layout_columnWeight="1"
             android:layout_rowWeight="1"
@@ -170,6 +177,7 @@
             android:layout_marginRight="16dp"
             app:cardMaxElevation="8dp"
             app:cardCornerRadius="8dp"
+            android:onClick="chat"
             >
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -203,6 +211,7 @@
             android:foreground="?android:attr/selectableItemBackground"
             android:clickable="true"
             android:focusable="true"
+            app:cardBackgroundColor="#80FFFFFF"
             android:layout_height="0dp"
             android:layout_columnWeight="1"
             android:layout_rowWeight="1"
@@ -211,6 +220,7 @@
             android:layout_marginRight="16dp"
             app:cardMaxElevation="8dp"
             app:cardCornerRadius="8dp"
+            android:onClick="upload"
             >
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -243,6 +253,7 @@
             android:clickable="true"
             android:focusable="true"
             android:layout_height="0dp"
+            app:cardBackgroundColor="#80FFFFFF"
             android:layout_columnWeight="1"
             android:layout_rowWeight="1"
             android:layout_marginBottom="16dp"
@@ -250,6 +261,7 @@
             android:layout_marginRight="16dp"
             app:cardMaxElevation="8dp"
             app:cardCornerRadius="8dp"
+            android:onClick="finance"
             >
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -282,6 +294,7 @@
             android:layout_width="0dp"
             android:foreground="?android:attr/selectableItemBackground"
             android:clickable="true"
+            app:cardBackgroundColor="#80FFFFFF"
             android:focusable="true"
             android:layout_height="0dp"
             android:layout_columnWeight="1"
@@ -291,6 +304,7 @@
             android:layout_marginRight="16dp"
             app:cardMaxElevation="8dp"
             app:cardCornerRadius="8dp"
+            android:onClick="academic"
             >
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -330,6 +344,8 @@
             android:layout_marginRight="16dp"
             app:cardMaxElevation="8dp"
             app:cardCornerRadius="8dp"
+            android:onClick="libray"
+            app:cardBackgroundColor="#80FFFFFF"
             >
             <LinearLayout
                 android:layout_width="wrap_content"
