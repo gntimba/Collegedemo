@@ -10,7 +10,7 @@ import com.demo.college_demo.R;
 
 import java.util.List;
 
-public class MoviesAdapter extends RecyclerView.Adapter<MoviesAdapter.MyViewHolder> {
+public class marksAdapter extends RecyclerView.Adapter<marksAdapter.MyViewHolder> {
 
     private List<marksModel> moviesList;
 
@@ -26,14 +26,14 @@ public class MoviesAdapter extends RecyclerView.Adapter<MoviesAdapter.MyViewHold
     }
 
 
-    public MoviesAdapter(List<marksModel> moviesList) {
+    public marksAdapter(List<marksModel> moviesList) {
         this.moviesList = moviesList;
     }
 
     @Override
     public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View itemView = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.activity_time_table, parent, false);
+            //    .inflate(R.layout.activity_main, parent, false);
 
         return new MyViewHolder(itemView);
     }
