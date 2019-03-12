@@ -11,18 +11,17 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".timeTable">
-
-        </activity>
-        <activity android:name=".finance">
-
-        </activity>
-        <activity android:name=".MainActivity">
+        <activity android:name=".academic">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity android:name=".timeTable" />
+        <activity android:name=".finance" />
+        <activity android:name=".MainActivity">
+
         </activity>
     </application>
 
