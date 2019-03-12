@@ -30,6 +30,9 @@ public class MainActivity extends AppCompatActivity {
     public void timeTable (View view)
     {
         Toast.makeText(this, "timeTable", Toast.LENGTH_SHORT).show();
+        Intent i = new Intent(this, timeTable.class);
+        startActivity(i);
+        Toast.makeText(this, "finance", Toast.LENGTH_SHORT).show();
     }
     public void attendance (View view)
     {

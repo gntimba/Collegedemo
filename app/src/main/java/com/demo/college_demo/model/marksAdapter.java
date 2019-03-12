@@ -1,5 +1,6 @@
 package com.demo.college_demo.model;
 
+import android.graphics.Color;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,7 +13,7 @@ import java.util.List;
 
 public class marksAdapter extends RecyclerView.Adapter<marksAdapter.MyViewHolder> {
 
-    private List<marksModel> moviesList;
+    private List<marksModel> marksList;
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
         public TextView subject, date, marks;
@@ -27,27 +28,36 @@ public class marksAdapter extends RecyclerView.Adapter<marksAdapter.MyViewHolder
 
 
     public marksAdapter(List<marksModel> moviesList) {
-        this.moviesList = moviesList;
+        this.marksList = moviesList;
     }
 
     @Override
     public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View itemView = LayoutInflater.from(parent.getContext())
-            //    .inflate(R.layout.activity_main, parent, false);
+                .inflate(R.layout.activity_adapter, parent, false);
 
         return new MyViewHolder(itemView);
     }
 
     @Override
     public void onBindViewHolder(MyViewHolder holder, int position) {
-        marksModel MarksModel = moviesList.get(position);
+        marksModel MarksModel = marksList.get(position);
         holder.subject.setText(MarksModel.getSubject());
         holder.date.setText(MarksModel.getDate());
-        holder.marks.setText(MarksModel.getMarks()+"%");
+
+        if (MarksModel.getMarks() == -1) {
+            holder.marks.setText("N/A");
+            holder.marks.setTextColor(Color.GRAY);
+        } else {
+            holder.marks.setText(MarksModel.getMarks() + "%");
+            if (MarksModel.getMarks() < 50) {
+                holder.marks.setTextColor(Color.RED);
+            }
+        }
     }
 
     @Override
     public int getItemCount() {
-        return moviesList.size();
+        return marksList.size();
     }
 }
