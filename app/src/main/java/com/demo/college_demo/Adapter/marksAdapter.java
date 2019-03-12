@@ -1,4 +1,4 @@
-package com.demo.college_demo.model;
+package com.demo.college_demo.Adapter;
 
 import android.graphics.Color;
 import android.support.v7.widget.RecyclerView;
@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.demo.college_demo.R;
+import com.demo.college_demo.model.marksModel;
 
 import java.util.List;
 

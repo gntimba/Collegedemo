@@ -9,7 +9,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.MenuItem;
 
-import com.demo.college_demo.model.marksAdapter;
+import com.demo.college_demo.Adapter.marksAdapter;
 import com.demo.college_demo.model.marksModel;
 
 import java.util.ArrayList;
