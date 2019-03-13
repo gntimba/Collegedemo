@@ -58,6 +58,9 @@ public class MainActivity extends AppCompatActivity {
     }
     public void academic (View view)
     {
+
+        Intent i = new Intent(this, academic.class);
+        startActivity(i);
         Toast.makeText(this, "academic", Toast.LENGTH_SHORT).show();
     }
     public void libray (View view)
