@@ -79,7 +79,8 @@ public class academicAdapter extends RecyclerView.Adapter<academicAdapter.ViewHo
             String t = "";
             for (int x = 1; x <= map.size(); x++) {
                 char b = (char) (x + '0');
-                t += map.get(b).toString() + "\n";
+                String[] ma = map.get(b).toString().split(":");
+                t += ma[0] + "\t\t\t\t\t\t\t\t\t\t" + ma[1] + "\n";
             }
 
 

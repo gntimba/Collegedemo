@@ -3,6 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:layout_marginBottom="12dp"
     android:orientation="vertical">
 
     <android.support.v7.widget.CardView
@@ -18,6 +19,7 @@
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
         app:cardMaxElevation="8dp"
+
         app:cardCornerRadius="4dp">
 
         <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -25,10 +27,15 @@
             android:layout_height="match_parent"
             android:paddingTop="4dp">
 
+
             <TableRow
                 android:layout_width="fill_parent"
                 android:layout_marginBottom="15dp"
                 android:layout_height="fill_parent">
+
+                <ImageView
+                    android:src="@drawable/arrow"
+                    android:layout_height="20dp" />
 
                 <TextView
                     android:id="@+id/subject2"
@@ -73,65 +80,47 @@
         android:id="@+id/expandable_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/colorPrimaryDark"
         app:el_duration="300"
         app:el_expanded="false">
 
-        <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        <android.support.v7.widget.CardView
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:paddingTop="4dp">
-
-            <TableRow
-                android:layout_width="fill_parent"
-                android:layout_marginBottom="15dp"
-                android:layout_height="fill_parent">
-
-                <TextView
-
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_column="1"
-                    android:layout_marginLeft="12dp"
-                    android:text="Mathematics"
-                    android:layout_marginRight="12dp"
-                    android:textStyle="bold" />
-
-                <TextView
-
-                    android:layout_width="wrap_content"
-                    android:text="MARKS"
-                    android:paddingLeft="40dp"
-                    android:textStyle="bold"
-
-                    android:textColor="@color/green"
-                    android:layout_height="wrap_content"
-
-                    android:layout_column="2" />
-
-            </TableRow>
-
-            <TableRow
-                android:layout_width="fill_parent"
-                android:layout_marginBottom="15dp"
-                android:layout_height="fill_parent">
+            android:layout_height="wrap_content"
+            app:cardBackgroundColor="#FFFFFF"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            app:cardMaxElevation="8dp"
+            app:cardPreventCornerOverlap="true"
+            app:cardCornerRadius="4dp">
 
 
-                <TextView
-                    android:id="@+id/test"
-                    android:layout_width="wrap_content"
-                    android:text="50%"
-                    android:singleLine="false"
-                    android:paddingLeft="40dp"
-                    android:textStyle="bold"
+            <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingTop="4dp">
 
-                    android:textColor="@color/green"
-                    android:layout_height="wrap_content"
+                <TableRow
+                    android:layout_width="fill_parent"
 
-                    android:layout_column="2" />
+                    android:layout_height="fill_parent">
 
-            </TableRow>
-        </TableLayout>
+
+                    <TextView
+                        android:id="@+id/test"
+                        android:layout_width="wrap_content"
+                        android:text="50%"
+                        android:singleLine="false"
+                        android:layout_marginLeft="12dp"
+                        android:textStyle="bold"
+
+                        android:textColor="@color/green"
+                        android:layout_height="wrap_content"
+
+                        android:layout_column="1" />
+
+                </TableRow>
+            </TableLayout>
+        </android.support.v7.widget.CardView>
 
     </net.cachapa.expandablelayout.ExpandableLayout>
 
