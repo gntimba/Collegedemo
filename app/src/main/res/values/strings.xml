@@ -11,4 +11,10 @@
     <string name="login_failed">"Login failed"</string>
     <string name="hint_resource">Gender</string>
     <string name="date_button_set">Set Date Of Birth</string>
+    <string name="childButton">Add Child</string>
+    <string name="gender_prompt">Choose a Gender</string>
+    <string-array name="gender">
+        <item>Male</item>
+        <item>Female</item>
+    </string-array>
 </resources>

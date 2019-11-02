@@ -12,8 +12,10 @@ import android.provider.MediaStore;
 import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -28,10 +30,11 @@ public class addChild extends AppCompatActivity {
     private static final int CAMERA_PERMISSION_CODE = 100;
     private static final int STORAGE_PERMISSION_CODE = 101;
     private static int RESULT_LOAD_IMAGE = 1;
-    ImageView imageView;
-    EditText name;
-    EditText surname;
-    Spinner spinner;
+    private ImageView imageView;
+    private EditText name;
+    private EditText surname;
+    private Spinner spinner;
+    private Button add;
     private Calendar calendar;
     private int year, month, day;
     private DatePickerDialog.OnDateSetListener myDateListener = new
@@ -56,9 +59,12 @@ public class addChild extends AppCompatActivity {
         surname = findViewById(R.id.surname);
         spinner = findViewById(R.id.gender);
         imageView = findViewById(R.id.imageView);
+        add = findViewById(R.id.add);
         calendar = Calendar.getInstance();
         year = calendar.get(Calendar.YEAR);
-
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setDisplayHomeAsUpEnabled(true);
+        actionBar.setTitle("Add Child");
         month = calendar.get(Calendar.MONTH);
         day = calendar.get(Calendar.DAY_OF_MONTH);
         checkPermission(READ_EXTERNAL_STORAGE, STORAGE_PERMISSION_CODE);
