@@ -23,6 +23,11 @@ public interface APIService {
 //    );
 
     @Multipart
-    @POST("/upload")
-    Call<ResponseBody> uploadImage(@Part MultipartBody.Part file, @Part("name") RequestBody requestBody);
+    @POST("api/child")
+    Call<ResponseBody> uploadImage(@Part MultipartBody.Part file,
+                                   @Part("name") RequestBody name,
+                                   @Part("surname") RequestBody surname,
+                                   @Part("dob") RequestBody dob,
+                                   @Part("gender") RequestBody gender,
+                                   @Part("userID") RequestBody userID);
 }

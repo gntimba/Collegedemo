@@ -22,9 +22,26 @@ import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import com.demo.college_demo.remote.APIService;
+import com.demo.college_demo.remote.ApiUtils;
+import com.demo.college_demo.remote.RetrofitClient;
+
+import java.io.File;
 import java.util.Calendar;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
+import okhttp3.MediaType;
+import okhttp3.MultipartBody;
+import okhttp3.RequestBody;
+import okhttp3.ResponseBody;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+import retrofit2.Retrofit;
 
 import static android.Manifest.permission.READ_EXTERNAL_STORAGE;
+import static java.util.logging.Level.INFO;
 
 public class addChild extends AppCompatActivity {
     private static final int CAMERA_PERMISSION_CODE = 100;
@@ -36,7 +53,12 @@ public class addChild extends AppCompatActivity {
     private Spinner spinner;
     private Button add;
     private Calendar calendar;
+    private String pictPath, dateofbirth;
     private int year, month, day;
+    APIService mAPIService;
+    Logger logger = Logger.getLogger("child");
+
+
     private DatePickerDialog.OnDateSetListener myDateListener = new
             DatePickerDialog.OnDateSetListener() {
                 @Override
@@ -68,14 +90,69 @@ public class addChild extends AppCompatActivity {
         month = calendar.get(Calendar.MONTH);
         day = calendar.get(Calendar.DAY_OF_MONTH);
         checkPermission(READ_EXTERNAL_STORAGE, STORAGE_PERMISSION_CODE);
+
+    }
+
+    public void upload(View view) {
+        try {
+            mAPIService = ApiUtils.getAPIService();
+            //Create a file object using file path
+            File file = new File(pictPath);
+            RequestBody fileReqBody = RequestBody.create(MediaType.parse("image/*"), file);
+            // Create MultipartBody.Part using file request-body,file name and part name
+            MultipartBody.Part part = MultipartBody.Part.createFormData("upload", file.getName(), fileReqBody);
+            //Create request body with text description and text media type
+            RequestBody passName = RequestBody.create(MediaType.parse("text/plain"), name.getText().toString());
+            RequestBody PassSurname = RequestBody.create(MediaType.parse("text/plain"), surname.getText().toString());
+            RequestBody dob = RequestBody.create(MediaType.parse("text/plain"), dateofbirth);
+            RequestBody gender = RequestBody.create(MediaType.parse("text/plain"), spinner.getSelectedItem().toString());
+            RequestBody userID = RequestBody.create(MediaType.parse("text/plain"), "1");
+            mAPIService.uploadImage(part, passName, PassSurname, dob, gender, userID).enqueue(new Callback<ResponseBody>() {
+                @Override
+                public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
+                    try {
+//                        Toast.makeText(getApplicationContext(),
+//                                response.raw(),
+//                                Toast.LENGTH_LONG)
+//                                .show();
+                        // logger.log(Level.SEVERE,response.raw().);
+                        logger.log(INFO, response.code() + "");
+                        logger.log(INFO, response.raw().request().url() + "");
+                        if (response.code() == 201) {
+                            Toast.makeText(getApplicationContext(),
+                                    "Information has been uploade fine",
+                                    Toast.LENGTH_LONG)
+                                    .show();
+                        }
+
+                    } catch (Exception e) {
+                        logger.log(Level.SEVERE, e.getMessage());
+                    }
+
+                }
+
+                @Override
+                public void onFailure(Call<ResponseBody> call, Throwable t) {
+                    Toast.makeText(getApplicationContext(),
+                            t.getMessage(),
+                            Toast.LENGTH_SHORT)
+                            .show();
+                    logger.log(Level.SEVERE, t.getMessage());
+
+                }
+            });
+        } catch (Exception e) {
+            logger.log(Level.SEVERE, e.getMessage());
+            e.printStackTrace();
+        }
+
+
     }
 
     public void image(View view) {
         Intent i = new Intent(
                 Intent.ACTION_PICK,
                 android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
-
-
         startActivityForResult(i, RESULT_LOAD_IMAGE);
     }
 
@@ -93,6 +170,7 @@ public class addChild extends AppCompatActivity {
 
             int columnIndex = cursor.getColumnIndex(filePathColumn[0]);
             String picturePath = cursor.getString(columnIndex);
+            pictPath = picturePath;
             cursor.close();
 
 
@@ -117,6 +195,7 @@ public class addChild extends AppCompatActivity {
     }
 
     private void showDate(int year, int month, int day) {
+        dateofbirth = year + "/" + month + "/" + day;
         Toast.makeText(getApplicationContext(), year + "/" + month + "/" + day,
                 Toast.LENGTH_SHORT)
                 .show();
