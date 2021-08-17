@@ -9,11 +9,11 @@ import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
-import android.support.annotation.NonNull;
-import android.support.v4.app.ActivityCompat;
-import android.support.v4.content.ContextCompat;
-import android.support.v7.app.ActionBar;
-import android.support.v7.app.AppCompatActivity;
+import androidx.annotation.NonNull;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
+import androidx.appcompat.app.ActionBar;
+import androidx.appcompat.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
@@ -24,7 +24,6 @@ import android.widget.Toast;
 
 import com.demo.college_demo.remote.APIService;
 import com.demo.college_demo.remote.ApiUtils;
-import com.demo.college_demo.remote.RetrofitClient;
 
 import java.io.File;
 import java.util.Calendar;
@@ -38,7 +37,6 @@ import okhttp3.ResponseBody;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
-import retrofit2.Retrofit;
 
 import static android.Manifest.permission.READ_EXTERNAL_STORAGE;
 import static java.util.logging.Level.INFO;

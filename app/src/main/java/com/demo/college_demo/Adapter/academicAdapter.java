@@ -1,15 +1,14 @@
 package com.demo.college_demo.Adapter;
 
 import android.content.Context;
-import android.support.v7.widget.CardView;
-import android.support.v7.widget.RecyclerView;
+import androidx.cardview.widget.CardView;
+import androidx.recyclerview.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.OvershootInterpolator;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.demo.college_demo.R;
 import com.demo.college_demo.model.academicModel;
@@ -72,7 +71,7 @@ public class academicAdapter extends RecyclerView.Adapter<academicAdapter.ViewHo
 
         public void bind() {
 
-            int position = getAdapterPosition();
+            int position = getBindingAdapterPosition();
             boolean isSelected = position == selectedItem;
             academicModel marks = marksList.get(position);
             Map map = marks.getMarks();
@@ -100,7 +99,7 @@ public class academicAdapter extends RecyclerView.Adapter<academicAdapter.ViewHo
                 holder.expandableLayout.collapse();
             }
 
-            int position = getAdapterPosition();
+            int position = getBindingAdapterPosition();
             if (position == selectedItem) {
                 selectedItem = UNSELECTED;
             } else {
@@ -114,7 +113,7 @@ public class academicAdapter extends RecyclerView.Adapter<academicAdapter.ViewHo
         public void onExpansionUpdate(float expansionFraction, int state) {
             Log.d("ExpandableLayout", "State: " + state);
             if (state == ExpandableLayout.State.EXPANDING) {
-                recyclerView.smoothScrollToPosition(getAdapterPosition());
+                recyclerView.smoothScrollToPosition(getBindingAdapterPosition());
             }
         }
     }
